@@ -34,9 +34,12 @@ Create a structured wellness summary in the following format:
 - Sleep Quality: ${extractedUserInfo.sleep_quality || 'Not discussed'}
 - Resting Heart Rate: ${extractedUserInfo.resting_heart_rate || 'Not specified'} bpm
 - Stress Level: ${extractedUserInfo.stress_level || 'Not assessed'}
+- Mood: ${extractedUserInfo.mood?.length ? extractedUserInfo.mood.join(', ') : 'Not discussed'}
 - Hydration: ${extractedUserInfo.hydration_level || 'Not discussed'}
 - Caffeine Intake: ${extractedUserInfo.caffeine_intake || 'Not specified'}
 - Alcohol Consumption: ${extractedUserInfo.alcohol_intake || 'Not specified'}
+- Tabaco Consumption: ${extractedUserInfo.tabaco_intake || 'Not specified'}
+- Female Cycle: ${extractedUserInfo.female_cycle_insights || 'Not specified'}
 
 ### LIFESTYLE CONTEXT
 - Work Schedule: ${extractedUserInfo.work_schedule || 'Not specified'}
@@ -44,7 +47,7 @@ Create a structured wellness summary in the following format:
 - Night Shifts: ${extractedUserInfo.night_shifts ? 'Yes' : 'No/Not specified'}
 - Business Travel: ${extractedUserInfo.business_travel ? 'Frequent' : 'Rare/Not specified'}
 - Family Obligations: ${extractedUserInfo.family_obligations?.length ? extractedUserInfo.family_obligations.join(', ') : 'Not discussed'}
-- Recovery Resources: ${extractedUserInfo.recovery_resources?.length ? extractedUserInfo.recovery_resources.join(', ') : 'Not discussed'}
+
 
 ### MEDICAL HISTORY & HEALTH
 - Chronic Conditions: ${extractedUserInfo.chronic_conditions?.length ? extractedUserInfo.chronic_conditions.join(', ') : 'None mentioned'}
@@ -54,10 +57,11 @@ Create a structured wellness summary in the following format:
 - Contraindications: ${extractedUserInfo.contraindications?.length ? extractedUserInfo.contraindications.join(', ') : 'None mentioned'}
 
 ### GOALS & PREFERENCES
-- Health Goals: ${extractedUserInfo.health_goals?.length ? extractedUserInfo.health_goals.join(', ') : 'Not specified'}
+- Wellness Goals: ${extractedUserInfo.wellness_goals?.length ? extractedUserInfo.wellness_goals.join(', ') : 'Not specified'}
 - Motivation Level: ${extractedUserInfo.motivation_level || 'Not assessed'}
 - Chronotype: ${extractedUserInfo.morning_evening_type || 'Not determined'}
 - Activity Preferences: ${extractedUserInfo.activity_preferences?.length ? extractedUserInfo.activity_preferences.join(', ') : 'Not discussed'}
+- Recovery Preferences: ${extractedUserInfo.recovery_preferences?.length ? extractedUserInfo.recovery_preferences.join(', ') : 'Not discussed'}
 - Nutrition Habits: ${extractedUserInfo.nutrition_habits?.length ? extractedUserInfo.nutrition_habits.join(', ') : 'Not discussed'}
 - Coaching Style Preference: ${extractedUserInfo.coaching_style_preference || 'Not specified'}
 
